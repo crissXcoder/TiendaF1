@@ -1,0 +1,452 @@
+:root {
+    --petronas-green: #00A19C;
+    --petronas-light: #40E0D0;
+    --mercedes-silver: #C0C0C0;
+    --mercedes-black: #2C2C2C;
+    --blanco: #FFFFFF;
+    --gris-claro: #F0F0F0;
+    --texto-oscuro: #333333;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--texto-oscuro);
+    background-color: var(--blanco);
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales */
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header y Navegación */
+.main-header {
+    background-color: var(--petronas-green);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Hace que la barra sea fija */
+    top: 0; /* Fija la barra en la parte superior de la página */
+    left: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+    transition: background-color 0.3s ease; /* Suaviza la transición del color de fondo */
+}
+
+/* Clase que se aplicará cuando el usuario haga scroll */
+.main-header.scroll-active {
+    background-color: rgba(0, 161, 156, 0.8); /* Hace el fondo verde acuamarino semi-transparente */
+    backdrop-filter: blur(5px); /* Aplica un ligero desenfoque */
+}
+
+.logo img {
+    max-height: 7rem;
+}
+
+.main-nav {
+    /* Flexbox para la navegación:
+     * - display: flex; permite que los elementos de la navegación se alineen horizontalmente
+     */
+    display: flex;
+}
+
+.nav-list {
+    /* Eliminamos los puntos de la lista y aplicamos Flexbox:
+     * - display: flex; alinea los elementos de la lista horizontalmente
+     * - gap: 2rem; crea un espacio uniforme entre los elementos de la lista
+     */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem; /* Espacio entre elementos de navegación */
+}
+
+.nav-list a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: var(--mercedes-silver);
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--mercedes-black);
+    padding: 5rem 0;
+    /* Centramos el contenido vertical y horizontalmente con Flexbox:
+     * - display: flex; convierte la sección en un contenedor flex
+     * - flex-direction: column; apila los elementos verticalmente
+     * - justify-content: center; centra verticalmente el contenido
+     * - align-items: center; centra horizontalmente el contenido
+     */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--blanco);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--petronas-green);
+    color: var(--blanco);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--petronas-light);
+}
+
+/* Sección de Productos */
+.productos-section {
+    padding: 5rem 0;
+    background-color: var(--gris-claro);
+}
+
+.productos-container {
+    /* Usamos Flexbox para crear una cuadrícula flexible de productos:
+     * - display: flex; crea un contenedor flex
+     * - flex-wrap: wrap; permite que los elementos se envuelvan a la siguiente línea si no caben
+     * - gap: 2rem; crea un espacio uniforme entre los productos
+     * - justify-content: center; centra los productos horizontalmente
+     */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.producto-card {
+    background-color: var(--blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Flexbox para organizar el contenido de la tarjeta verticalmente:
+     * - display: flex; convierte la tarjeta en un contenedor flex
+     * - flex-direction: column; apila los elementos verticalmente
+     * - flex-basis: calc(25% - 2rem); establece el ancho base de cada tarjeta
+     * - flex-grow: 1; permite que las tarjetas crezcan para llenar el espacio disponible
+     */
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(25% - 2rem);
+    flex-grow: 1;
+    min-height: 350px;
+}
+
+.producto-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.producto-card h3 {
+    margin: 1rem;
+    color: var(--mercedes-black);
+}
+
+.producto-card p {
+    margin: 0 1rem;
+    /* flex-grow: 1 hace que el párrafo ocupe todo el espacio disponible,
+       empujando el botón hacia abajo */
+    flex-grow: 1;
+}
+
+.producto-card button {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--petronas-green);
+    color: var(--blanco);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.producto-card button:hover {
+    background-color: var(--petronas-light);
+}
+
+/* Galería de Imágenes */
+.galeria-section {
+    padding: 5rem 0;
+}
+
+.galeria-container {
+    /* Usamos Flexbox para crear una galería de imágenes flexible:
+     * - display: flex; crea un contenedor flex
+     * - flex-wrap: wrap; permite que las imágenes se envuelvan a la siguiente línea
+     * - gap: 1rem; crea un espacio uniforme entre las imágenes
+     * - justify-content: center; centra las imágenes horizontalmente
+     */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.galeria-container img {
+    /* flex-basis: calc(33.333% - 1rem) crea una cuadrícula de 3 columnas */
+    flex-basis: calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    /* Transición suave al hacer hover */
+    transition: transform 0.3s ease;
+}
+
+.galeria-container img:hover {
+    /* Efecto de zoom al pasar el mouse */
+    transform: scale(1.05);
+}
+
+/* Sección de Comentarios */
+.comentarios-section {
+    padding: 5rem 0;
+    background-color: var(--mercedes-silver);
+}
+
+.comentarios-container {
+    /* Flexbox para organizar los comentarios en una columna:
+     * - display: flex; crea un contenedor flex
+     * - flex-direction: column; apila los comentarios verticalmente
+     * - gap: 2rem; crea un espacio uniforme entre los comentarios
+     */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.comentario {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Flexbox para alinear la imagen del usuario y el contenido del comentario:
+     * - display: flex; crea un contenedor flex
+     * - align-items: center; centra verticalmente los elementos
+     */
+    display: flex;
+    align-items: center;
+}
+
+.comentario img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+.comentario-contenido {
+    /* Flexbox para organizar el nombre y el texto del comentario:
+     * - display: flex; crea un contenedor flex
+     * - flex-direction: column; apila el nombre y el texto verticalmente
+     */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    padding: 5rem 0;
+    background-color: var(--petronas-green);
+    /* Centramos el contenido con Flexbox:
+     * - display: flex; crea un contenedor flex
+     * - flex-direction: column; apila los elementos verticalmente
+     * - align-items: center; centra horizontalmente el contenido
+     */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-form {
+    /* Flexbox para organizar el input y el botón horizontalmente:
+     * - display: flex; crea un contenedor flex
+     * - gap: 1rem; crea un espacio entre el input y el botón
+     */
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    width: 100%;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.newsletter-form button {
+    padding: 1rem 2rem;
+    background-color: var(--mercedes-black);
+    color: var(--blanco);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--mercedes-silver);
+}
+
+/* Características Section */
+.caracteristicas-section {
+    padding: 5rem 0;
+}
+
+.caracteristicas-container {
+    /* Flexbox para organizar las características en una fila:
+     * - display: flex; crea un contenedor flex
+     * - justify-content: space-around; distribuye el espacio alrededor de los elementos
+     * - flex-wrap: wrap; permite que los elementos se envuelvan a la siguiente línea
+     * - gap: 2rem; crea un espacio uniforme entre las características
+     */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.caracteristica {
+    /* Flexbox para organizar el contenido de cada característica verticalmente:
+     * - display: flex; crea un contenedor flex
+     * - flex-direction: column; apila los elementos verticalmente
+     * - align-items: center; centra horizontalmente el contenido
+     * - flex-basis: calc(33.333% - 2rem); establece el ancho base de cada característica
+     */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-basis: calc(33.333% - 2rem);
+}
+
+.caracteristica i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--petronas-green);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--mercedes-black);
+    color: var(--blanco);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    /* Flexbox para organizar las secciones del footer:
+     * - display: flex; crea un contenedor flex
+     * - flex-wrap: wrap; permite que las secciones se envuelvan a la siguiente línea
+     * - justify-content: space-between; distribuye el espacio entre las secciones
+     * - gap: 2rem; crea un espacio uniforme entre las secciones
+     */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-section {
+    /* flex-basis define el ancho base de cada sección del footer */
+    flex-basis: calc(33.333% - 2rem);
+}
+
+.footer-section h3 {
+    margin-top: 0;
+    color: var(--petronas-green);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--blanco);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--petronas-light);
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--mercedes-silver);
+    padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        /* Cambiamos a columna en dispositivos móviles */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list {
+        margin-top: 1rem;
+    }
+
+    .producto-card {
+        /* En móviles, las tarjetas ocupan todo el ancho */
+        flex-basis: 100%;
+    }
+
+    .galeria-container img {
+        /* En móviles, las imágenes ocupan la mitad del ancho */
+        flex-basis: calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
+
+    .caracteristica {
+        /* En móviles, las características ocupan todo el ancho */
+        flex-basis: 100%;
+    }
+
+    .footer-section {
+        /* En móviles, las secciones del footer ocupan todo el ancho */
+        flex-basis: 100%;
+    }
+}

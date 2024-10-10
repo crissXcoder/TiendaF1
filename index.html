@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica Avanzada de Flexbox</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="img/Logo1.png" alt="Logo de la empresa">
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#comentarios">Comentarios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="hero" class="hero-section">
+            <h1>Bienvenido a nuestra Tienda</h1>
+            <p>Descubre nuestros productos increíbles</p>
+            <a href="#productos" class="cta-button">Ver Productos</a>
+        </section>
+
+        <section id="productos" class="productos-section">
+            <h2>Nuestros Productos</h2>
+            <div class="productos-container">
+                <div class="producto-card">
+                    <img src="img/Hoody.png" alt="Producto 1">
+                    <h3>Hoody</h3>
+                    <p>Un Hoody con los diferentes patrocinadores</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="producto-card">
+                    <img src="img/Camiseta..png" alt="Producto 2">
+                    <h3>Camiseta</h3>
+                    <p>Camiseta sensilla de la marca</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="producto-card">
+                    <img src="img/gorra.png" alt="Producto 3">
+                    <h3>Gorra</h3>
+                    <p>Gorra sensilla de la marca</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="producto-card">
+                    <img src="img/Sombrilla.png" alt="Producto 4">
+                    <h3>Sombrilla</h3>
+                    <p>Sombrilla sencilla de la marca</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="galeria-section">
+            <h2>Galería de Imágenes</h2>
+            <div class="galeria-container">
+                <img src="img/imagen1.png" alt="Imagen 1">
+                <img src="img/imagen2.png" alt="Imagen 2">
+                <img src="img/imagen3.png" alt="Imagen 3">
+                <img src="img/imagen4.png" alt="Imagen 4">
+                <img src="img/imagen5.png" alt="Imagen 5">
+                <img src="img/imagen6.png" alt="Imagen 6">
+            </div>
+        </section>
+
+        <section id="comentarios" class="comentarios-section">
+            <h2>Comentarios de Clientes</h2>
+            <div class="comentarios-container">
+                <div class="comentario">
+                    <img src="img/comentario1.png" alt="Usuario 1">
+                    <div class="comentario-contenido">
+                        <h3>Lewis Hamilton</h3>
+                        <p>Excelente producto, muy satisfecho con mi compra.</p>
+                    </div>
+                </div>
+                <div class="comentario">
+                    <img src="img/comentario2.png" alt="Usuario 2">
+                    <div class="comentario-contenido">
+                        <h3>Toto Wolff</h3>
+                        <p>La calidad es increíble, lo recomiendo totalmente.</p>
+                    </div>
+                </div>
+                <div class="comentario">
+                    <img src="img/comentario3.png" alt="Usuario 3">
+                    <div class="comentario-contenido">
+                        <h3>George Russell</h3>
+                        <p>Buen servicio al cliente y envío rápido.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter-section">
+            <h2>Suscríbete a nuestro Newsletter</h2>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </section>
+
+        <section id="caracteristicas" class="caracteristicas-section">
+            <h2>Características de nuestros productos</h2>
+            <div class="caracteristicas-container">
+                <div class="caracteristica">
+                    <i class="icono-calidad"></i>
+                    <h3>Alta Calidad</h3>
+                    <p>Todos nuestros productos están hechos con los mejores materiales.</p>
+                </div>
+                <div class="caracteristica">
+                    <i class="icono-envio"></i>
+                    <h3>Envío Rápido</h3>
+                    <p>Entrega garantizada en 24-48 horas.</p>
+                </div>
+                <div class="caracteristica">
+                    <i class="icono-garantia"></i>
+                    <h3>Garantía</h3>
+                    <p>30 días de garantía en todos nuestros productos.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <p>Somos una empresa dedicada a ofrecer los mejores productos con la mejor calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: info@petronastore.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Dirección: Río Cañas, Carrillo</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Petrona Store. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>
